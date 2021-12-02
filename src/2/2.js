@@ -7,17 +7,19 @@ const orders = readInput().map(str => {
 
 let horizontal = 0;
 let depth = 0;
+let aim = 0
 
 orders.forEach(([command, value]) => {
   switch (command) {
     case 'forward':
       horizontal += value
+      depth += aim * value
       break;
     case 'down':
-      depth += value
+      aim += value
       break;
     case 'up':
-      depth -= value
+      aim -= value
       break;
   }
 })
